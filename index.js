@@ -8,8 +8,8 @@ const moment = require('moment');
     }
 
     let rango2 = {
-        inicio : moment().add(-5, 'days').startOf('day'),
-        fin: moment().add(-2, 'days').startOf('day')
+        inicio : moment().subtract(5, 'days').startOf('day'),
+        fin: moment().subtract(2, 'days').startOf('day')
     }
 
     if(rango1.inicio.isBefore(rango2.inicio)){
