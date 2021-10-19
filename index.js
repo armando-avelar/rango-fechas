@@ -12,22 +12,12 @@ const moment = require('moment');
         fin: moment().subtract(2, 'days').startOf('day')
     }
 
-    if(rango1.inicio.isBetween(rango2.inicio, rango2.fin)){
-        console.log('estas en el rango 2');
-        return
-    }
-    
-    if(rango1.fin.isBetween(rango2.inicio, rango2.fin)){
+    if(rango1.inicio.isBetween(rango2.inicio, rango2.fin) || rango1.fin.isBetween(rango2.inicio, rango2.fin)){
         console.log('estas en el rango 2');
         return
     }
 
-    if(rango2.inicio.isBetween(rango1.inicio, rango1.fin)){
-        console.log('estas en el rango 1');
-        return;
-    }
-    
-    if(rango2.fin.isBetween(rango1.inicio, rango1.fin)){
+    if(rango2.inicio.isBetween(rango1.inicio, rango1.fin) || rango2.fin.isBetween(rango1.inicio, rango1.fin)){
         console.log('estas en el rango 1');
         return;
     }
